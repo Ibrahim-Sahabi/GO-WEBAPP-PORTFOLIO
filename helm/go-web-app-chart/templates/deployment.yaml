@@ -2,21 +2,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: go-web-app
+  name: go-webapp-portfolio
   labels:
-    app: go-web-app
+    app: go-webapp-portfolio
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: go-web-app
+      app: go-webapp-portfolio
   template:
     metadata:
       labels:
-        app: go-web-app
+        app: go-webapp-portfolio
     spec:
       containers:
-      - name: go-web-app
-        image: ibrahimsahabi87/go-web-app:{{ .Values.image.tag }}
+      - name: go-webapp-portfolio
+        image: ibrahimsahabi87/go-webapp-portfolio:{{ .Values.image.tag }}
         ports:
         - containerPort: 8080
